@@ -8,6 +8,7 @@ export default function (state = [], action = {}) {
       };
 
     case 'SIGN_UP_USER_FULFILLED':
+    console.log('inside reducer  fullfilled',action.payload.data )
       return {
         ...state,
         isLoading: false,

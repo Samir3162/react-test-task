@@ -4,8 +4,8 @@ import SignUp from '../scenes/SignUp';
 import signUp from '../actions/signUpAction';
 
 const mapStateToProps = state => ({
-  userData: state.signUp.data || [],
-  isLoading: state.isLoading,
+  companyId: state.signUp.data || {},
+  isLoading: state.signUp.isLoading,
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -17,6 +17,7 @@ ReactDOM.render((
     <Router>
       <Suspense fallback={'Loading...'}>
         <Switch>
+          <Route exact path="/companylist" component={HomeContainer} />
           <Route exact path="/createcompany" component={HomeContainer} />
           <Route exact path="/id/:id" component={DetailContainer} />
           <Route exact path="/" component={() => <div>404</div>} />

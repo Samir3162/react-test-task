@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Button, Form, FormGroup, Label, Input, Spinner } from 'reactstrap';
-import axios from 'axios'
 
 const SignUp = (props) => {
   const [name, setName] = useState('');
@@ -18,22 +17,11 @@ const SignUp = (props) => {
       "monthly_rent": monthlyRent
     }
     console.log('state', companyDetail)
-    props.signUp(companyDetail)
+    props.signUp(companyDetail).then(({action}) => {
+      const response = action.payload.data.data;
+      props.history.push(`/id/${response.company_id}`);
+    })
   }
-  useEffect(() => {
-    if (props.userData.length) {
-      console.log('user Detail', props.userDatas);
-      props.history.push('/id/123');
-    }
-
-    // axios.get('http://192.168.1.168:8080/api/companies/detail/7')
-    // .then(function(response) {
-    //   return response.json();
-    // })
-    // .then(function(myJson) {
-    //   console.log(JSON.stringify(myJson));
-    // });
-  }, [props.userData]);
 
   if (props.isLoading) {
     return (

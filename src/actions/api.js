@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export default axios.create({
-  baseURL: 'http://192.168.1.168:8080/api',
+  baseURL: 'https://django-test44.herokuapp.com/',
 });
