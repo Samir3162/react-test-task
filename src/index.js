@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import * as serviceWorker from './serviceWorker';
 import configureStore from './store';
 import DetailContainer from './containers/DetailContainer'
+import CompanyListContainer from './containers/CompanyListContainer'
 
 const HomeContainer = lazy(() => import('./containers/SignUpContainer'));
 
@@ -17,10 +18,10 @@ ReactDOM.render((
     <Router>
       <Suspense fallback={'Loading...'}>
         <Switch>
-          <Route exact path="/companylist" component={HomeContainer} />
+          <Route exact path="/" component={CompanyListContainer} />
           <Route exact path="/createcompany" component={HomeContainer} />
           <Route exact path="/id/:id" component={DetailContainer} />
-          <Route exact path="/" component={() => <div>404</div>} />
+          <Route path="/" component={() => <div>404</div>} />
         </Switch>
       </Suspense>
     </Router>

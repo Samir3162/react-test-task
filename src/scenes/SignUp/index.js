@@ -30,8 +30,11 @@ const SignUp = (props) => {
     </div>);
   }
   return (
-    <Form style={{ padding: 100 }}>
+    <Form style={{ padding: 50 }}>
 
+      <div style={{display: 'flex', justifyContent: 'space-between'}}>
+        <h1>New Company</h1>
+        </div>
       <FormGroup required>
         <Label for="examplePassword">Name</Label>
         <Input value={name} onChange={(e) => setName(e.target.value)} type="text" name="name" id="name" placeholder="Type your company name here" />

@@ -24,6 +24,7 @@ const ModalExample = (props) => {
         console.log('state', companyDetail)
         props.addNewOffice(companyDetail).then(({action}) => {
             setIsAddOffice(false);
+            props.getOfficeList(props.match.params.id)
         })
       }
     return (

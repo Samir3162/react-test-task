@@ -46,6 +46,30 @@ export default function (state = [], action = {}) {
           isLoading: false,
           error: true,
         };
+
+      
+        case 'GET_OFFICE_LIST_PENDING':
+        return {
+          ...state,
+          isLoading: true,
+          error: false,
+        };
+  
+      case 'GET_OFFICE_LIST_FULFILLED':
+      console.log('inside reducer  fullfilled',action.payload.data )
+        return {
+          ...state,
+          isLoading: false,
+          OfficeListdata: action.payload.data,
+          error: false,
+        };
+  
+      case 'GET_OFFICE_LIST_REJECTED':
+        return {
+          ...state,
+          isLoading: false,
+          error: true,
+        };
   
       default:
         return {

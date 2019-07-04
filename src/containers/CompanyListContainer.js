@@ -1,21 +1,20 @@
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 
-// import Details from '../scenes/Details';
-// import { getCompanyDetail, addNewOffice } from '../actions/companyAction';
+import CompanyList from '../scenes/CompanyList';
+import { getCompanyList } from '../actions/companyListAction';
+const mapStateToProps = state => ({
+    companyListData: state.companyList.data || {},
+    isLoading: state.companyList.isLoading
+});
 
-// const mapStateToProps = state => ({
-//   companyDetail: state.companyDetail.data || [],
-//   isLoading: state.companyDetail.isLoading,
-// });
+const mapDispatchToProps = dispatch => ({
+    getCompanyList: () => dispatch(getCompanyList()),  
 
-// const mapDispatchToProps = dispatch => ({
-//   getCompanyDetail: (companyDetail) => dispatch(getCompanyDetail(companyDetail)),
-//   addNewOffice: (companyId) => dispatch(addNewOffice(companyId)),
-// });
+});
 
-// const DetailsContainer = connect(
-//   mapStateToProps,
-//   mapDispatchToProps,
-// )(Details);
+const CompanyListContainer = connect(
+    mapStateToProps,
+    mapDispatchToProps,
+)(CompanyList);
 
-// export default DetailsContainer;
+export default CompanyListContainer;
