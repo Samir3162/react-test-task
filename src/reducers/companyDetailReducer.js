@@ -10,7 +10,6 @@ export default function (state = [], action = {}) {
         };
   
       case 'GET_COMPANY_DETAIL_FULFILLED':
-      console.log('GET_COMPANY_DETAIL_FULFILLED fullfilled',action.payload.data )
         return {
           ...state,
           isLoading: false,
@@ -32,7 +31,6 @@ export default function (state = [], action = {}) {
         };
   
       case 'ADD_NEW_OFFICE_FULFILLED':
-      console.log('ADD_NEW_OFFICE_FULFILLED fullfilled',action.payload.data )
         return {
           ...state,
           isLoading: false,
@@ -56,7 +54,6 @@ export default function (state = [], action = {}) {
         };
   
       case 'GET_OFFICE_LIST_FULFILLED':
-      console.log('inside reducer  fullfilled',action.payload.data )
         return {
           ...state,
           isLoading: false,

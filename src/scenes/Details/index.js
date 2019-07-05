@@ -10,19 +10,14 @@ const Detail = (props) => {
   const [details, setDetails] = useState({});
   const [isAddOffice, setIsAddOffice] = useState(false);
   useEffect(() => {
-    console.log('inside detail', props.match.params.id);
-    if (!(props.companyListData && props.companyListData.data && props.companyListData.data[0])) {
-      props.getCompanyList()
-    }
+     props.getCompanyList()
   }, [])
   useEffect(() => {
-    console.log('success APIasdasdasdas', props.companyListData)
 
     if (props.companyListData && props.companyListData.data && props.companyListData.data[0]) {
 
       const { id } = props.match.params
       const companyDetails = props.companyListData.data.find((val) => val.id == id)
-      console.log('success APIasdasdasdas', companyDetails)
       if (companyDetails && companyDetails.city) {
         const { city, company, monthly_rent_sum, monthly_rent, postal_code, street } = companyDetails;
         setDetails({

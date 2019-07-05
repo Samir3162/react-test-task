@@ -17,7 +17,6 @@ const SignUp = (props) => {
       "city": city,
       "monthly_rent": monthlyRent
     }
-    console.log('state', companyDetail)
     props.signUp(companyDetail).then(({action}) => {
       const response = action.payload.data.data;
       props.history.push(`/id/${response.company_id}`);

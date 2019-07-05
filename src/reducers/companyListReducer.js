@@ -8,7 +8,6 @@ export default function (state = [], action = {}) {
         };
   
       case 'GET_ALL_COMPNIES_LIST_FULFILLED':
-      console.log('inside reducer  fullfilled',action.payload.data )
         return {
           ...state,
           isLoading: false,

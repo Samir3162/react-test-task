@@ -2,7 +2,6 @@ import api from './api';
 
 
 export const addNewOffice = (companyId) => {
-  console.log('company ID ', companyId)
   return({
   type: 'ADD_NEW_OFFICE',
   payload: api.post(`/offices/`, companyId),

@@ -23,7 +23,6 @@ const ModalExample = (props) => {
           "monthly_rent": monthlyRent,
           "company": props.match.params.id
         }
-        console.log('state', companyDetail)
         props.addNewOffice(companyDetail).then(({action}) => {
             setIsAddOffice(false);
             props.getOfficeList(props.match.params.id)

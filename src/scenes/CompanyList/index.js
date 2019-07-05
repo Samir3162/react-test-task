@@ -10,7 +10,6 @@ const CompanyList = (props) => {
     }, [])
     useEffect(() => {
         if (JSON.stringify(props.companyListData) !== "{}") {
-            console.log('companyListData', props.companyListData)
             setCompanyList(props.companyListData.data);
         }
     }, [props.companyListData])

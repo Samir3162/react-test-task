@@ -5,12 +5,10 @@ import { withRouter } from "react-router";
 const CompanyList = (props) => {
     const [companyList, setOfficeList] = useState([]);
     useEffect(() => {
-        console.log('dasdabhdhjk')
         props.getOfficeList(props.match.params.id)
     }, []);
     useEffect(() => {
         if (props.officeListdata && props.officeListdata.data) {
-            console.log('OfficeListdata', props.officeListdata)
             setOfficeList(props.officeListdata.data);
         }
     }, [props.officeListdata])
