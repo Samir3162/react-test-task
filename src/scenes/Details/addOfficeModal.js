@@ -13,6 +13,8 @@ const ModalExample = (props) => {
     const { setIsAddOffice, isAddOffice } = props;
     
     const onFormSubmit = (e) => {
+
+    if(street && postalAddress && city && monthlyRent && props.match.params.id) {
         e.preventDefault();
         const companyDetail = {
           "street": street,
@@ -26,6 +28,9 @@ const ModalExample = (props) => {
             setIsAddOffice(false);
             props.getOfficeList(props.match.params.id)
         })
+    } else {
+        alert('Enter valid detail')
+    }
       }
     return (
         <div>
@@ -50,7 +55,7 @@ const ModalExample = (props) => {
                     </FormGroup>
                     <FormGroup required>
                         <Label for="examplePassword">Monthly Rent</Label>
-                        <Input value={monthlyRent} onChange={(e) => setMonthlyRent(e.target.value)} type="text" name="text" id="monthlyRent" placeholder="Monthly rent" />
+                        <Input value={monthlyRent} onChange={(e) => setMonthlyRent(e.target.value)} type="number" name="number" id="monthlyRent" placeholder="Monthly rent" />
                     </FormGroup>
                     <Button onClick={onFormSubmit}>Submit</Button>
                 </Form>

@@ -60,7 +60,7 @@ export default function (state = [], action = {}) {
         return {
           ...state,
           isLoading: false,
-          OfficeListdata: action.payload.data,
+          officeListdata: action.payload.data,
           error: false,
         };
   

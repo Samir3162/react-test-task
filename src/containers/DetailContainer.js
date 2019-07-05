@@ -2,10 +2,11 @@ import { connect } from 'react-redux';
 
 import Details from '../scenes/Details';
 import { addNewOffice, getOfficeList, changeHeadquarter } from '../actions/companyAction';
+import { getCompanyList } from '../actions/companyListAction'
 
 const mapStateToProps = state => ({
   companyDetail: state.companyDetail.data || {},    
-  OfficeListdata: state.companyDetail.OfficeListdata,
+  officeListdata: state.companyDetail.officeListdata,
   isLoading: state.companyDetail.isLoading,
   companyListData: state.companyList.data || {}
 });
@@ -13,8 +14,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   addNewOffice: (companyId) => dispatch(addNewOffice(companyId)),
   getOfficeList: (companyId) => dispatch(getOfficeList(companyId)),
-  changeHeadquarter: (companyId, officeId) => dispatch(changeHeadquarter(companyId, officeId))
-
+  changeHeadquarter: (companyId, officeId) => dispatch(changeHeadquarter(companyId, officeId)),
+  getCompanyList: () => dispatch(getCompanyList()),  
 });
 
 const DetailsContainer = connect(

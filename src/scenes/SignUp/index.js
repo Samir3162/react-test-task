@@ -8,6 +8,7 @@ const SignUp = (props) => {
   const [city, setCity] = useState('');
   const [monthlyRent, setMonthlyRent] = useState('');
   const onFormSubmit = (e) => {
+    if(name && street && postalAddress && city && monthlyRent) {
     e.preventDefault();
     const companyDetail = {
       "name": name,
@@ -21,6 +22,9 @@ const SignUp = (props) => {
       const response = action.payload.data.data;
       props.history.push(`/id/${response.company_id}`);
     })
+  } else {
+    alert('Enter valid details')
+  }
   }
 
   if (props.isLoading) {
@@ -55,7 +59,7 @@ const SignUp = (props) => {
       </FormGroup>
       <FormGroup required>
         <Label for="examplePassword">Monthly Rent</Label>
-        <Input value={monthlyRent} onChange={(e) => setMonthlyRent(e.target.value)} type="text" name="text" id="monthlyRent" placeholder="Monthly rent" />
+        <Input value={monthlyRent} onChange={(e) => setMonthlyRent(e.target.value)} type="number" name="number" id="monthlyRent" placeholder="Monthly rent" />
       </FormGroup>
       <Button onClick={onFormSubmit}>Submit</Button>
     </Form>

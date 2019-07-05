@@ -17,8 +17,8 @@ export const getOfficeList = (companyId) => {
 export const changeHeadquarter = (companyId, officeId) => {
   return({
   type: 'CHANGE_HEADQUARTER_LIST',
-  payload: api.patch(`/companies/${companyId}/_change_headquater/${officeId}/`, {data : {
-    "is_headquater": true
-}}),
+  payload: api.patch(`/companies/${companyId}/_change_headquater/${officeId}/`, {
+    "headquater": true
+}),
 })};
 
